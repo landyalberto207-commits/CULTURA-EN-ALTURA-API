@@ -8,11 +8,18 @@ API REST construida con FastAPI para Cultura en Altura.
 cd backend
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 La documentación queda disponible en /docs y el health check en /health.
+
+Para ejecutar pruebas:
+
+```bash
+cd backend
+pytest test_main.py -v
+```
 
 ## Despliegue en Render
 
@@ -24,6 +31,11 @@ Configuración usada por Render:
 - Build Command: pip install -r requirements.txt
 - Start Command: uvicorn main:app --host 0.0.0.0 --port $PORT
 - Health Check Path: /health
+
+Nota de dependencias:
+
+- [backend/requirements.txt](backend/requirements.txt) contiene solo dependencias de ejecución.
+- [backend/requirements-dev.txt](backend/requirements-dev.txt) añade herramientas de pruebas y desarrollo.
 
 Variables de entorno requeridas en Render:
 
