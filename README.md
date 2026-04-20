@@ -25,6 +25,8 @@ pytest test_main.py -v
 
 Este repositorio ya incluye un blueprint en [render.yaml](render.yaml) para desplegar el backend como Web Service.
 
+Tambien incluye compatibilidad para despliegues manuales desde la raiz del repositorio, por si el servicio de Render no toma rootDir correctamente.
+
 Configuración usada por Render:
 
 - Root Directory: backend
@@ -36,6 +38,7 @@ Nota de dependencias:
 
 - [backend/requirements.txt](backend/requirements.txt) contiene solo dependencias de ejecución.
 - [backend/requirements-dev.txt](backend/requirements-dev.txt) añade herramientas de pruebas y desarrollo.
+- [requirements.txt](requirements.txt) en la raíz existe para despliegues manuales en Render.
 
 Variables de entorno requeridas en Render:
 
